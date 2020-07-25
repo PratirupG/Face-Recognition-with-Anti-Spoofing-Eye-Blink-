@@ -54,31 +54,3 @@ class FACE_VERIFICATION:
             print('Recognized image {}'.format(name))
         else:
             print('SPOOFING ')
-''''
-# Take Photo
-videoCaptureObject = cv2.VideoCapture(0)
-result = True
-while(result):
-    #ret,frame = videoCaptureObject.read()
-    vs = FileVideoStream(video_path).start()
-    frame = vs.read()
-    #frame = ndimage.rotate(frame, 180)
-    frame = ndimage.rotate(frame, 90)
-    cap_image = frame
-
-    check = SPOOF_DETECTION().spoof_detection(video_path)
-
-    cv2.imwrite("NewPicture8.jpg",frame)
-    result = False
-    vs.stop()
-cv2.destroyAllWindows()
-#path = r'C:Users\DHIRAJ\Face Recog New'
-#cap_image = cv2.imread(os.path.join(path,'NewPicture.jpg'))
-
-if check == True:
-
-    name = obj.face_recognize(cap_image)
-    print('Recognized image {}'.format(name))
-else:
-    print('SPOOFING ')'''
-
